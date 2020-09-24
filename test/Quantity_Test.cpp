@@ -139,6 +139,14 @@ TEST(LengthTest, given_2_inch_and_2_inch_WhenAdded__should_be_four_inch)
     ASSERT_EQ(total_inch, first_inch + second_inch);
 }
 
+TEST(LengthTest, given_1_feet_and_2_inch_WhenAdded__should_be_14_inch)
+{
+    Length _1_feet(Unit::FEET, 1.0);
+    Length _2_inch(Unit::INCH, 2.0);
+    Length total_inch(Unit::INCH, 14.0);
+    ASSERT_EQ(total_inch, _2_inch + _1_feet);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

@@ -3,7 +3,7 @@
 
 class Length
 {
-    double value;
+    long double value;
     Unit unit;
 
 public:
@@ -11,6 +11,8 @@ public:
     Length(){}
     bool operator==(Length) const;
     bool operator==(Length *other) const;
+    bool Length::operator!=(Length *other) const;
+    bool Length::operator!=(Length other) const;
     Length operator+(Length);
     bool compare(Length);
 };
