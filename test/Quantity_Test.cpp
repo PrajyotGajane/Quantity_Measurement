@@ -125,6 +125,12 @@ TEST(LengthTest, given_2_Inch_And_5_Cm_WhenCompare_ShouldReturnTrue) {
     ASSERT_TRUE(inch_value.compare(centimeter_value));
 }
 
+TEST(LengthTest, given_1_Inch_And_1_Cm_WhenCompare_ShouldReturnFalse) {
+    Length inch_value(Unit::INCH, 1.0);
+    Length centimeter_value(Unit::CENTIMETER, 1.0);
+    ASSERT_FALSE(inch_value.compare(centimeter_value));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
