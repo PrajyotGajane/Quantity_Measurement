@@ -95,6 +95,12 @@ TEST(LengthTest, given_1_Feet_And_1_Yard_WhenCompare_ShouldReturnFalse) {
     ASSERT_FALSE(feet_value.compare(yard_value));
 }
 
+TEST(LengthTest, given_1_Inch_And_1_Yard_WhenCompare_ShouldReturnFalse) {
+    Length inch_value(Unit::INCH, 1.0);
+    Length yard_value(Unit::YARD, 1.0);
+    ASSERT_FALSE(inch_value.compare(yard_value));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
