@@ -206,12 +206,20 @@ TEST(VolumeTest, given_1_Litre_And_1000_ML_WhenCompare_ShouldReturnTrue)
     ASSERT_FALSE(gallon_value.compare(ml_value));
 }
 
-TEST(VolumeTest, given_1_Gallon_And_3_78_Litre_WhenAdded_ShouldReturn_7_56_In_Litres)
+TEST(VolumeTest, given_1_Gallon_And_3_78_Litre_WhenAdded_ShouldReturn_7_56_Litres)
 {
     Quantity gallon_value(Unit::GALLON, 1.0);
     Quantity litre_value(Unit::LITRE, 3.78);
     Quantity total_value(Unit::LITRE, 7.56);
     ASSERT_EQ(total_value, litre_value + gallon_value);
+}
+
+TEST(VolumeTest, given_1_Litre_And_1000_ML_WhenAdded_ShouldReturn_2_Litres)
+{
+    Quantity litre_value(Unit::LITRE, 1.0);
+    Quantity ml_value(Unit::MILLILITRE, 1000.0);
+    Quantity total_value(Unit::LITRE, 2.0);
+    ASSERT_EQ(total_value, litre_value + ml_value);
 }
 
 int main(int argc, char **argv)
