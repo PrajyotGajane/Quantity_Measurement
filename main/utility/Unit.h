@@ -14,4 +14,5 @@ class Unit {
         static Unit FEET;
         static Unit INCH;
         static Unit YARD;
+        static Unit CENTIMETER;
 };
