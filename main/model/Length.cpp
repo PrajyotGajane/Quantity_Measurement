@@ -15,3 +15,12 @@ bool Length::operator==(Length other) const
     }
     return false;
 }
+
+bool Length::operator==(Length *other) const
+{
+    if (other == nullptr)
+    {
+        return false;
+    }
+    return true;
+}
