@@ -131,6 +131,14 @@ TEST(LengthTest, given_1_Inch_And_1_Cm_WhenCompare_ShouldReturnFalse) {
     ASSERT_FALSE(inch_value.compare(centimeter_value));
 }
 
+TEST(LengthTest, given_2_inch_and_2_inch_WhenAdded__should_be_four_inch)
+{
+    Length first_inch(Unit::INCH, 2.0);
+    Length second_inch(Unit::INCH, 2.0);
+    Length total_inch(Unit::INCH, 4.0);
+    ASSERT_EQ(total_inch, first_inch + second_inch);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

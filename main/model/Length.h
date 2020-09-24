@@ -8,8 +8,9 @@ class Length
 
 public:
     Length(Unit, double);
-
+    Length(){}
     bool operator==(Length) const;
     bool operator==(Length *other) const;
+    Length operator+(Length);
     bool compare(Length);
 };

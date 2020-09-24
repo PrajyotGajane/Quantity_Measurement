@@ -25,7 +25,19 @@ bool Length::operator==(Length *other) const
     return true;
 }
 
-bool Length::compare(Length that) {
+Length Length::operator+(Length other)
+{
+    Length result_quantity;
+
+    result_quantity.value = this->value + other.value;
+
+    result_quantity.unit = this->unit;
+
+    return result_quantity;
+}
+
+bool Length::compare(Length that)
+{
     double first_value = unit.get_base_value(this->value);
     double second_value = that.unit.get_base_value(that.value);
     return (first_value == second_value);
