@@ -236,6 +236,14 @@ TEST(WeightTest, given_1_tonne_And_1000_kg_WhenCompare_ShouldReturnTrue)
     ASSERT_TRUE(kg_value.compare(tonne_value));
 }
 
+TEST(WeightTest, given_1_tonne_And_1000_gm_WhenAdded_ShouldReturn_1001_kg)
+{
+    Quantity tonne_value(Unit::TONNE, 1.0);
+    Quantity gm_value(Unit::GRAM, 1000.0);
+    Quantity total_value(Unit::LITRE, 1001.0);
+    ASSERT_EQ(total_value, tonne_value + gm_value);
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);
