@@ -11,4 +11,5 @@ class Unit {
     public:
         Unit();
         static Unit FEET;
+        static Unit INCH;
 };

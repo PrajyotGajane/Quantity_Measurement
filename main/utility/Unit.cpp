@@ -8,3 +8,4 @@ Unit::Unit(double base_conversion_factor)
 }
 
 Unit Unit::FEET(12);
+Unit Unit::INCH(1);

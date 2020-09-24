@@ -36,6 +36,12 @@ TEST(LengthTest, givenDifferentFeetValue_whenCompare_ShouldReturnFalse) {
     ASSERT_FALSE(first_feet_value == second_feet_value);
 }
 
+TEST(LengthTest, given_0_Inch_And_0_Inch_WhenCompare_ShouldReturnTrue) { 
+    Length first_zero_inch(Unit::INCH, 0.0); 
+    Length second_zero_inch(Unit::INCH, 0.0);
+    ASSERT_EQ(first_zero_inch, second_zero_inch);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
