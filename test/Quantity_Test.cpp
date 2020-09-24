@@ -53,6 +53,13 @@ TEST(LengthTest, givenSameReferenceForInch_WhenEqual_ShouldReturnTrue) {
     ASSERT_EQ(first_inch_ref, second_inch_ref);
 }
 
+TEST(LengthTest, givenSameTypeForInch_WhenEqual_ShouldReturnTrue) {
+    Length first_inch_type(Unit::INCH, 1.0);
+    Length second_inch_type(Unit::INCH, 1.0);
+    ASSERT_TRUE(first_inch_type == second_inch_type);
+}
+
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
