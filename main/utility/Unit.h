@@ -19,4 +19,5 @@ public:
     static Unit CENTIMETER;
     static Unit GALLON;
     static Unit LITRE;
+    static Unit MILLILITRE;
 };
