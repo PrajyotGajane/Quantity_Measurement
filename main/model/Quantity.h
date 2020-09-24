@@ -11,8 +11,7 @@ public:
     Quantity() {}
     bool operator==(Quantity) const;
     bool operator==(Quantity *other) const;
-    bool Quantity::operator!=(Quantity *other) const;
-    bool Quantity::operator!=(Quantity other) const;
     Quantity operator+(Quantity);
     bool compare(Quantity);
+    bool compareTemperature(Quantity);
 };

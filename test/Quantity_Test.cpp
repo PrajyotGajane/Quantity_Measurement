@@ -244,6 +244,13 @@ TEST(WeightTest, given_1_tonne_And_1000_gm_WhenAdded_ShouldReturn_1001_kg)
     ASSERT_EQ(total_value, tonne_value + gm_value);
 }
 
+TEST(TemperatureTest, given_100_Celcius_212Fahrenheit_WhenCompare_ShouldReturnTrue)
+{
+    Quantity celsius_value(Unit::CELSIUS, 100.0);
+    Quantity fahrenheit_value(Unit::FAHRENHEIT, 212.0);
+    ASSERT_TRUE(celsius_value.compareTemperature(fahrenheit_value));
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);

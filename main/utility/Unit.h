@@ -23,4 +23,8 @@ public:
     static Unit KILOGRAM;
     static Unit GRAM;
     static Unit TONNE;
+    static Unit CELSIUS;
+    static Unit FAHRENHEIT;
+    double get_temp_base_value(double value);
+    bool operator==(Unit) const;
 };

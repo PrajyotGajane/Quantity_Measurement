@@ -23,3 +23,13 @@ Unit Unit::MILLILITRE(0.001, VOLUME);
 Unit Unit::KILOGRAM(1, WEIGHT);
 Unit Unit::GRAM(0.001, WEIGHT);
 Unit Unit::TONNE(1000, WEIGHT);
+Unit Unit::CELSIUS(1.8, TEMPERATURE);
+Unit Unit::FAHRENHEIT(1, TEMPERATURE);
+
+double Unit::get_temp_base_value(double value) {
+     return value * this->base_conversion_factor + 32;
+}
+
+bool Unit::operator== (Unit other) const {
+    return ((*this) == other);
+}

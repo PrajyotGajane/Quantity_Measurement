@@ -25,16 +25,6 @@ bool Quantity::operator==(Quantity *other) const
     return true;
 }
 
-bool Quantity::operator!=(Quantity *other) const
-{
-    return !(this == other);
-}
-
-bool Quantity::operator!=(Quantity other) const
-{
-    return !(*this == other);
-}
-
 Quantity Quantity::operator+(Quantity other)
 {
     Quantity result_quantity;
@@ -52,6 +42,18 @@ bool Quantity::compare(Quantity that)
     if (this->unit.unit_type == that.unit.unit_type)
     {
         double first_value = unit.get_base_value(this->value);
+        double second_value = that.unit.get_base_value(that.value);
+        return (first_value == second_value);
+    }
+    return false;
+}
+
+bool Quantity::compareTemperature(Quantity that)
+{
+    double first_value = 0.0;
+    if (unit.unit_type == that.unit.unit_type)
+    {
+        first_value = unit.get_temp_base_value(value);
         double second_value = that.unit.get_base_value(that.value);
         return (first_value == second_value);
     }
