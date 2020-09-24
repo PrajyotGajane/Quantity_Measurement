@@ -9,7 +9,7 @@ Length::Length(Unit unit, double value)
 
 bool Length::operator==(Length other) const
 {
-    if (this->value == other.value)
+    if (this->value == other.value && typeid(this->value).name() == typeid(other.value).name())
     {
         return true;
     }
