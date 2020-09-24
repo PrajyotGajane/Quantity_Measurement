@@ -9,7 +9,6 @@ Length::Length(Unit unit, double value)
 
 bool Length::operator==(Length other) const
 {
-    std::cout << "i am in other";
     if (this->value == other.value && typeid(this->value).name() == typeid(other.value).name())
     {
         return true;
@@ -19,7 +18,6 @@ bool Length::operator==(Length other) const
 
 bool Length::operator==(Length *other) const
 {
-    std::cout << "i am in * other";
     if (other == nullptr)
     {
         return false;

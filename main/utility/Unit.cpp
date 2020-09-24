@@ -7,7 +7,8 @@ Unit::Unit(double base_conversion_factor)
     this->base_conversion_factor = base_conversion_factor;
 }
 
-double Unit::get_base_value(double value) {
+double Unit::get_base_value(double value)
+{
     return (this->base_conversion_factor * value);
 }
 
