@@ -185,22 +185,33 @@ TEST(LengthTest, given_2_inch_and_2_5_cm_WhenAdded__should_return_3_inch)
     ASSERT_EQ(total_inch, _2_inch + _2_5_CM);
 }
 
-TEST(VolumeTest, given_1_Gallon_And_Litre_WhenCompare_ShouldReturnTrue) {
+TEST(VolumeTest, given_1_Gallon_And_Litre_WhenCompare_ShouldReturnTrue)
+{
     Quantity gallon_value(Unit::GALLON, 1.0);
     Quantity litre_value(Unit::LITRE, 3.78);
     ASSERT_TRUE(gallon_value.compare(litre_value));
 }
 
-TEST(VolumeTest, given_1_Gallon_And_1_FEET_WhenCompare_ShouldReturnFalse) {
+TEST(VolumeTest, given_1_Gallon_And_1_FEET_WhenCompare_ShouldReturnFalse)
+{
     Quantity gallon_value(Unit::GALLON, 1.0);
     Quantity feet_value(Unit::FEET, 1.0);
     ASSERT_FALSE(gallon_value.compare(feet_value));
 }
 
-TEST(VolumeTest, given_1_Litre_And_1000_ML_WhenCompare_ShouldReturnTrue) {
+TEST(VolumeTest, given_1_Litre_And_1000_ML_WhenCompare_ShouldReturnTrue)
+{
     Quantity gallon_value(Unit::GALLON, 1.0);
     Quantity ml_value(Unit::MILLILITRE, 1.0);
     ASSERT_FALSE(gallon_value.compare(ml_value));
+}
+
+TEST(VolumeTest, given_1_Gallon_And_3_78_Litre_WhenAdded_ShouldReturn_7_56_In_Litres)
+{
+    Quantity gallon_value(Unit::GALLON, 1.0);
+    Quantity litre_value(Unit::LITRE, 3.78);
+    Quantity total_value(Unit::LITRE, 7.56);
+    ASSERT_EQ(total_value, litre_value + gallon_value);
 }
 
 int main(int argc, char **argv)
