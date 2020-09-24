@@ -10,6 +10,7 @@ class Unit {
     
     public:
         Unit();
+        double get_base_value(double);
         static Unit FEET;
         static Unit INCH;
 };

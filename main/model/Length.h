@@ -11,4 +11,5 @@ public:
 
     bool operator==(Length) const;
     bool operator==(Length *other) const;
+    bool compare(Length);
 };
