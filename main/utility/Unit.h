@@ -7,7 +7,7 @@ class Unit
 {
 
     double base_conversion_factor;
-    Unit(double,UnitType);
+    Unit(double, UnitType);
 
 public:
     Unit();
@@ -20,4 +20,7 @@ public:
     static Unit GALLON;
     static Unit LITRE;
     static Unit MILLILITRE;
+    static Unit KILOGRAM;
+    static Unit GRAM;
+    static Unit TONNE;
 };

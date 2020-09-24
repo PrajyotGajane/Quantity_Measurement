@@ -222,6 +222,13 @@ TEST(VolumeTest, given_1_Litre_And_1000_ML_WhenAdded_ShouldReturn_2_Litres)
     ASSERT_EQ(total_value, litre_value + ml_value);
 }
 
+TEST(WeightTest, given_1_Kg_And_1000_grams_WhenCompare_ShouldReturnTrue)
+{
+    Quantity kg_value(Unit::KILOGRAM, 1.0);
+    Quantity gram_value(Unit::GRAM, 1000.0);
+    ASSERT_TRUE(kg_value.compare(gram_value));
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);
