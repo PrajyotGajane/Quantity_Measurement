@@ -191,6 +191,12 @@ TEST(VolumeTest, given_1_Gallon_And_Litre_WhenCompare_ShouldReturnTrue) {
     ASSERT_TRUE(gallon_value.compare(litre_value));
 }
 
+TEST(VolumeTest, given_1_Gallon_And_1_FEET_WhenCompare_ShouldReturnFalse) {
+    Quantity gallon_value(Unit::GALLON, 1.0);
+    Quantity feet_value(Unit::FEET, 1.0);
+    ASSERT_FALSE(gallon_value.compare(feet_value));
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);
