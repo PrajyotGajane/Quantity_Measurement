@@ -12,6 +12,12 @@ TEST(LengthTest, givenOneFeetAndNullFeet_ShouldReturnFalse) {
     ASSERT_FALSE(_one_feet == nullptr);
 }
 
+TEST(LengthTest, givenSameReferenceForFeet_WhenEqual_ShouldReturnTrue) {
+    Length *first_feet_ref = new Length(Unit::FEET, 1.0);
+    Length *second_feet_ref = first_feet_ref;
+    ASSERT_EQ(first_feet_ref, second_feet_ref);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
