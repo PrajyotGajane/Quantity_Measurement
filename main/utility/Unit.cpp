@@ -13,3 +13,4 @@ double Unit::get_base_value(double value) {
 
 Unit Unit::FEET(12);
 Unit Unit::INCH(1);
+Unit Unit::YARD(36);
